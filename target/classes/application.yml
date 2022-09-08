@@ -1,0 +1,16 @@
+server:
+  port: 8002
+  servlet:
+    context-path: ''
+
+spring:
+  main:
+    allow-circular-references: true
+  application:
+    name: employee-crud-demo
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/demo
+      grid-fs-database: images
+jwt:
+  secret: changeme

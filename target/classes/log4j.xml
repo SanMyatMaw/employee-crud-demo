@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration monitorInterval="60" packages="biz.paluch.logging.gelf.log4j2">
+    <Appenders>
+        <Gelf name="gelf"
+              host="udp:localhost"
+              port="12209"
+              version="1.1"
+              extractStackTrace="true"
+              originHost="employee-crud-demo">
+            This is a static field
+            <Field name="namespace" literal="dev-employee-crud-demo" />
+            <Field name="application" literal="employee-crud-demo" />
+            <Field name="type" literal="demo-service" />
+            <Field name="simpleClassName" pattern="%C{1}" />
+            <Field name="className" pattern="%C" />
+            <Field name="LineNumber" pattern="%line" />
+            <Field name="threadName" pattern="%t" />
+        </Gelf>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="gelf"/>
+        </Root>
+    </Loggers>
+</Configuration>
